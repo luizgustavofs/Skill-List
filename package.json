@@ -15,10 +15,26 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.2",
+    "react-native-safe-area-context": "3.3.2",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "eslint": "7.14.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-import-resolver-babel-plugin-root-import": "^1.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-module-resolver": "^1.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-native": "^3.8.1",
+    "prettier": "^2.0.5"
   },
   "private": true
 }
