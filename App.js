@@ -8,8 +8,10 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
+  View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Svg, { Path } from 'react-native-svg';
 
 export default function App() {
   const [skillList, setSkillList] = useState([]);
@@ -19,7 +21,7 @@ export default function App() {
 
   function addSkillList() {
     if (digitado === '') {
-      Alert.alert('You are idiot!');
+      Alert.alert('Try writing something to add to your list. :D');
     } else {
       setSkillList([...skillList, { valor: digitado, id: skillList.length }]);
       setDigitado('');
@@ -60,6 +62,18 @@ export default function App() {
       </TouchableOpacity>
       <Text style={styles.listTitle}>My Skills</Text>
       <FlatList
+        ListEmptyComponent={
+          <View style={styles.emptyView}>
+            <Svg width={20} height={20} viewBox="0 0 20 20">
+              <Path
+                d="M16.993 6.667H3.227l6.883 6.883 6.883-6.883z"
+                fill="#000"
+              />
+            </Svg>
+            <Text style={styles.emptyText}>Empty List.</Text>
+          </View>
+        }
+        contentContainerStyle={{ flexGrow: 1 }}
         style={styles.mySkills}
         data={skillList}
         renderItem={({ item }) => (
@@ -120,6 +134,15 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginTop: 24,
+  },
+  emptyText: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  emptyView: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   item: {
     backgroundColor: '#120f15',
